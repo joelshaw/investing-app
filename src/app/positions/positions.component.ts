@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MarketService } from '../market.service';
 
 @Component({
   selector: 'app-positions',
@@ -6,15 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./positions.component.less']
 })
 export class PositionsComponent implements OnInit {
+  market;
 
-  public positions = [
-    { symbol: 'tsla', price: 41.50 },
-    { symbol: 'ford', price: 4.50 }
-  ];
-
-  constructor() { }
+  constructor(private marketService: MarketService) { }
 
   ngOnInit() {
+    this.marketService.getMarketData()
+      .subscribe(res => this.market = res);
   }
 
 }
