@@ -1,3 +1,20 @@
 <section id="positions-view">
-  <p>positions view</p>
+  <table id="positions-table">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let position of positions; let i = index">
+        <td>{{position.symbol}}</td>
+        <td>{{position.price}}</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </section>

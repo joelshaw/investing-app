@@ -9,8 +9,11 @@ export class AccountsComponent implements OnInit {
 
   constructor() { }
 
-  name = 'account name';
-  postion = 7;
+  public accounts = [
+    {name: 'account 1', close: 7000, current: 7000},
+    {name: 'account 2', close: 17000, current: 6000},
+    {name: 'account 3', close: 7000, current: 6000}
+  ];
 
   ngOnInit() {
   }

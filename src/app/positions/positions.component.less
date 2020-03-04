@@ -1,5 +1,31 @@
 #positions-view {
-  margin: 1em 0 0 0;
-  padding: 1em;
+  margin: 1em auto;
+  width: 80%;
   border: 1px solid #cecece;
+}
+
+#positions-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+
+  thead {
+    background: #cecece;
+  }
+
+  th {
+    font-weight: bold;
+    padding: 0.5em;
+  }
+
+  td {
+    padding: 0.5em;
+  }
+
+  tr {
+    border-bottom: 1px solid #cecece;
+    &:last-of-type {
+      border: none;
+    }
+  }
 }

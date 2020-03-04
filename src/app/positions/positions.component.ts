@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PositionsComponent implements OnInit {
 
+  public positions = [
+    { symbol: 'tsla', price: 41.50 },
+    { symbol: 'ford', price: 4.50 }
+  ];
+
   constructor() { }
 
   ngOnInit() {
