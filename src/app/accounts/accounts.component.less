@@ -1,16 +1,18 @@
 #account-view {
   display: flex;
-  border: 1px solid #cecece;
-  padding: 0.5em 1em;
+  margin: 0.5em 0;
 
   .account-view__account {
-    background: #cecece;
-    margin: 0 1em;
+    background: rgba(206, 206, 206, 0.5);
+    border: 1px solid #cecece;
+    margin: 0 1em 0 0;
     padding: 0.5em 1em;
     width: calc(100% / 3);
+    transition: .1s linear all;
+    cursor: pointer;
 
     &.active {
-      background: #cecece;
+      background: rgba(206, 206, 206, 1);
     }
   }
 }
