@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-positions',
@@ -9,13 +9,17 @@ import { HttpClient } from '@angular/common/http';
 export class PositionsComponent implements OnInit {
 
   url = 'assets/data/market.json';
-  positions;
+  positions: any = [];
+  stocks: any = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.http.get(this.url).subscribe((data) => {
-      console.log(data);
+      this.positions = data.stocks;
+      console.log(data.stocks);
+    }, (err: HttpErrorResponse) => {
+      console.log(err.message);
     });
   }
 
