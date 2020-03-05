@@ -8,19 +8,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClientsComponent implements OnInit {
 
-  public clients = [
-    {name: 'Client 1', id: 1234},
-    {name: 'Client 2', id: 4567}
-  ];
-
   url = 'assets/data/clients.json';
-  positions;
+  clients: any[];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.http.get(this.url).subscribe((data) => {
-      console.log(data);
+      this.clients = data.clients;
     });
   }
 

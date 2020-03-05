@@ -2,7 +2,7 @@
   <div class="site-container">
     <ul>
       <li *ngFor="let client of clients">
-        <a routerLink="/accounts/{{client.id}}">{{client.name}}</a></li>
+        <a routerLink="/accounts/{{client.clientID}}">{{client.name}}</a></li>
     </ul>
 
     <div class="client-view__active">
