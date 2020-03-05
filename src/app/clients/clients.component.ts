@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-clients',
@@ -14,8 +14,10 @@ export class ClientsComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get(this.url).subscribe((data) => {
+    this.http.get(this.url).subscribe((data:any) => {
       this.clients = data.clients;
+    },(err: HttpErrorResponse) => {
+      console.log(err.message);
     });
   }
 

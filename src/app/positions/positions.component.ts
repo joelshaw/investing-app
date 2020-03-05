@@ -15,9 +15,8 @@ export class PositionsComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get(this.url).subscribe((data) => {
+    this.http.get(this.url).subscribe((data:any) => {
       this.positions = data.stocks;
-      console.log(data.stocks);
     }, (err: HttpErrorResponse) => {
       console.log(err.message);
     });
