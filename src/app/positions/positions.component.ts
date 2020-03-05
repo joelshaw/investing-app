@@ -9,15 +9,14 @@ import { HttpClient } from '@angular/common/http';
 export class PositionsComponent implements OnInit {
 
   url = 'assets/data/market.json';
+  positions;
 
-  constructor(private http: HttpClient) {
-    this.http.get(this.url).toPromise().then(data => {
-      console.log(data);
-    });
-  }
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-
+    this.http.get(this.url).subscribe((data) => {
+      console.log(data);
+    });
   }
 
 }

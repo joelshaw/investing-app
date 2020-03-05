@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-clients',
@@ -12,9 +13,15 @@ export class ClientsComponent implements OnInit {
     {name: 'Client 2', id: 4567}
   ];
 
-  constructor() { }
+  url = 'assets/data/clients.json';
+  positions;
+
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
+    this.http.get(this.url).subscribe((data) => {
+      console.log(data);
+    });
   }
 
 }
