@@ -15,7 +15,10 @@ export class AccountsComponent implements OnInit {
     {name: 'account 3', close: 7000, current: 6000}
   ];
 
+  accountSelected;
+
   ngOnInit() {
+
   }
 
 }
