@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-accounts',
@@ -7,18 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  public accounts = [
-    {name: 'account 1', close: 7000, current: 7000},
-    {name: 'account 2', close: 17000, current: 6000},
-    {name: 'account 3', close: 7000, current: 6000}
-  ];
+  url = 'assets/data/accountSummary.json';
+  public accounts = [];
 
   accountSelected;
 
   ngOnInit() {
-
+    this.http.get(this.url).subscribe((data:any) => {
+      this.accounts = data.accounts;
+      console.log(data.accounts)
+    },(err: HttpErrorResponse) => {
+      console.log(err.message);
+    });
   }
 
 }
