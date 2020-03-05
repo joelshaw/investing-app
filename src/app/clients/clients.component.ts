@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientsComponent implements OnInit {
 
+  public clients = [
+    {name: 'Client 1', id: 123},
+    {name: 'Client 2', id: 456}
+  ];
+
   constructor() { }
 
   ngOnInit() {

@@ -6,9 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MarketService {
 
+  private marketUrl = '/data/market.json';
+
   constructor(private httpService: HttpClient) { }
 
   getMarketData() {
-    return this.httpService.get('../data/market.json');
+    return this.httpService.get(this.marketUrl);
   }
 }
