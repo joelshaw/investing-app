@@ -1,1 +1,1 @@
-{clients:[{clientID:1234,name:"Jon Doe",address:"123 Memory Lane"},{clientID:5678,name:"Jane Doe",address:"124 Memory Lane"}]}
+{"clients":[{"clientID":1234,"name":"Jon Doe","address":"123 Memory Lane"},{"clientID":5678,"name":"Jane Doe","address":"124 Memory Lane"}]}
