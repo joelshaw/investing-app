@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MarketService } from '../market.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-positions',
@@ -7,13 +7,17 @@ import { MarketService } from '../market.service';
   styleUrls: ['./positions.component.less']
 })
 export class PositionsComponent implements OnInit {
-  market;
 
-  constructor(private marketService: MarketService) { }
+  url = 'assets/data/market.json';
+
+  constructor(private http: HttpClient) {
+    this.http.get(this.url).toPromise().then(data => {
+      console.log(data);
+    });
+  }
 
   ngOnInit() {
-    this.marketService.getMarketData()
-      .subscribe(res => this.market = res);
+
   }
 
 }
