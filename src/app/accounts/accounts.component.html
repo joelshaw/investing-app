@@ -1,7 +1,7 @@
 <section id="account-view">
   <div class="site-container">
     <div class="account-view__account" *ngFor="let account of accounts">
-      <div (click)="displayDetails()" [ngClass]="expanded ? 'expanded' : 'hidden'">
+      <div (click)="displayDetails()" class="account-view__account--overview" [ngClass]="expanded ? 'expanded' : 'hidden'">
         <p><strong>Account Name:</strong> {{account.name}}</p>
         <p><strong>Last Position:</strong> {{account.lastMrkClose}}</p> 
       </div>
