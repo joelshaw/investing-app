@@ -1,11 +1,13 @@
 <section id="account-view">
   <div class="site-container">
     <div class="account-view__account" *ngFor="let account of accounts">
-      <p><strong>Account Name:</strong> {{account.name}}</p>
-      <p><strong>Last Position:</strong> {{account.lastMrkClose}}</p>
+      <div (click)="displayDetails()">
+        <p><strong>Account Name:</strong> {{account.name}}</p>
+        <p><strong>Last Position:</strong> {{account.lastMrkClose}}</p> 
+      </div>
     </div>
-    <div class="account-view__details">
-      <p><strong>Account:</strong> {{account}}</p><button class="account-view__details--edit" (click)="updateAccount()">Edit Account Name</button>
+    <div class="account-view__details" [hidden]="!active">
+      <p><strong>Account:</strong> {{accounts.name}}</p><button class="account-view__details--edit" (click)="updateAccount()">Edit Account Name</button>
       <p><strong>Last Market Close: {{close}}</strong></p>
       <p><strong>Current Market Value: {{current}}</strong></p>
     </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { AccountsComponent } from '../accounts/accounts.component';
 
@@ -13,10 +13,11 @@ export class PositionsComponent implements OnInit {
   positions: any = [];
   stocks: any = [];
 
+  qty:any = 8;
+  total = 5;
+  
+  
   constructor(private http: HttpClient) {}
-
-  @Input() accounts: AccountsComponent;
-
   ngOnInit() {
     this.http.get(this.url).subscribe((data:any) => {
       this.positions = data.stocks;
