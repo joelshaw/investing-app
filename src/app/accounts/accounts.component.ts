@@ -16,6 +16,7 @@ export class AccountsComponent implements OnInit {
 
   accountSelected;
   active;
+  accountName = 'test';
 
   ngOnInit() {
     this.http.get(this.url).subscribe((data:any) => {
@@ -27,6 +28,13 @@ export class AccountsComponent implements OnInit {
 
   displayDetails() {
     this.active = true;
+  }
+
+  toggleAccountEdit() {
+
+  }
+
+  editAccountName() {
   }
 
 }

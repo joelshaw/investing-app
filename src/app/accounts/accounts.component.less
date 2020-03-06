@@ -1,12 +1,12 @@
 @grey : rgba(206, 206, 206, 0.5);
-
+@gold : #B58D3D;
 #account-view {
 margin: 0.5em 0 2.5em;
 
   .account-view__account {
     display: inline-block;
-    background: @grey;
-    border: 1px solid #cecece;
+
+    border: 1px solid @gold;
     margin: 0 1em 1em 0;
     padding: 0.5em 1em;
     width: calc(85% / 3);
@@ -14,7 +14,7 @@ margin: 0.5em 0 2.5em;
     cursor: pointer;
 
     &:hover {
-      background: darken(@grey, 10%);
+      background: lighten(@gold, 25%);
     }
 
     &.active {

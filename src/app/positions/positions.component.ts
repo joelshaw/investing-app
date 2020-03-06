@@ -12,9 +12,6 @@ export class PositionsComponent implements OnInit {
   url = 'assets/data/market.json';
   positions: any = [];
   stocks: any = [];
-
-  qty:any = 8;
-  total = 5;
   
   
   constructor(private http: HttpClient) {}
