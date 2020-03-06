@@ -1,12 +1,12 @@
 <section id="account-view">
   <div class="site-container">
     <div class="account-view__account" *ngFor="let account of accounts">
-      <div (click)="displayDetails()">
+      <div (click)="displayDetails()" [ngClass]="expanded ? 'expanded' : 'hidden'">
         <p><strong>Account Name:</strong> {{account.name}}</p>
         <p><strong>Last Position:</strong> {{account.lastMrkClose}}</p> 
       </div>
     </div>
-    <div class="account-view__details" [hidden]="!active">
+    <div class="account-view__details" [hidden]="!expanded">
       <p><strong>Account:</strong> {{accounts.name}}</p><button class="account-view__details--edit" (click)="toogleAccountEdit()">Edit Account Name</button>
       <div class="account-view__details--edit">
         <form action="">
