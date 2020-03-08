@@ -13,11 +13,11 @@ export class PositionsComponent implements OnInit {
   positions: any = [];
   stocks: any = [];
 
-  
-  
+  @Input() accountData: string;
+
   constructor(private http: HttpClient) {}
   ngOnInit() {
-    this.http.get(this.url).subscribe((data:any) => {
+    this.http.get(this.url).subscribe((data: any) => {
       this.positions = data.stocks;
     }, (err: HttpErrorResponse) => {
       console.log(err.message);

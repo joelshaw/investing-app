@@ -27,8 +27,10 @@ export class AccountsComponent implements OnInit {
   active;
   expanded: boolean = false;
 
+  public accountData = 'test';
+
   ngOnInit() {
-    this.http.get(this.url).subscribe((data:any) => {
+    this.http.get(this.url).subscribe((data: any) => {
       this.accounts = data.accounts;
     },(err: HttpErrorResponse) => {
       console.log(err.message);

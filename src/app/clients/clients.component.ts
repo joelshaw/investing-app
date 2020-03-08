@@ -18,7 +18,7 @@ export class ClientsComponent implements OnInit {
 
 
 
-    this.http.get(this.url).subscribe((data:any) => {
+    this.http.get(this.url).subscribe((data: any) => {
       this.clients = data.clients;
     },(err: HttpErrorResponse) => {
       console.log(err.message);
