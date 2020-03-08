@@ -18,7 +18,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 export class AccountsComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, public router: Router) { }
 
   url = 'assets/data/accountSummary.json';
   public accounts = [];
@@ -38,7 +38,7 @@ export class AccountsComponent implements OnInit {
   }
 
   displayDetails() {
-    this.expanded = !this.expanded;
+      this.expanded = !this.expanded;
   }
 
   toggleAccountEdit() {

@@ -1,5 +1,4 @@
 <section id="positions-view">
-  {{accountData}}
   <table id="positions-table">
     <thead>
       <tr>
@@ -12,7 +11,7 @@
     <tbody>
       <tr *ngFor="let position of positions; let i = index">
         <td>{{position.symbol}}</td>
-        <td>{{position.qty}}</td>
+        <td>{{accountData.quantity}}</td>
         <td>{{position.price}}</td>
         <td>{{position.total}}</td>
       </tr>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { AccountsComponent } from '../accounts/accounts.component';
 
 @Component({
@@ -17,7 +18,7 @@ export class PositionsComponent implements OnInit {
 
   @Input() accountData: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, public router: Router) {}
 
   ngOnInit() {
 
