@@ -5,18 +5,11 @@
         <p><strong>Account Name:</strong> {{account.name}}</p>
         <p><strong>Last Position:</strong> {{account.lastMrkClose}}</p>
       </div>
-    </div>
-    <div class="account-view__details" [hidden]="!expanded">
-      <p><strong>Account:</strong> {{accounts.name}}</p><button class="account-view__details--edit" (click)="toogleAccountEdit()">Edit Account Name</button>
-      <!-- <div class="account-view__details--edit">
-        <form action="">
-          <input [(ngModel)]="accounts.name" name="Account Name" />
-          <button (click)="editAccountName()" type="submit">Save</button>
-        </form>
-
-      </div> -->
-      <p><strong>Last Market Close: {{close}}</strong></p>
-      <p><strong>Current Market Value: {{current}}</strong></p>
+      <div class="account-view__details" [hidden]="!expanded">
+        <p><strong>Account:</strong> {{account.name}}</p><button class="account-view__details--edit" (click)="toogleAccountEdit()">Edit Account Name</button>
+        <p><strong>Last Market Close: {{account.lastMrkClose}}</strong></p>
+        <p><strong>Current Market Value: {{current}}</strong></p>
+      </div>
     </div>
   </div>
 </section>
