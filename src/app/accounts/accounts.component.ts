@@ -32,20 +32,13 @@ export class AccountsComponent implements OnInit {
   ngOnInit() {
     this.http.get(this.url).subscribe((data: any) => {
       this.accounts = data.accounts;
-    },(err: HttpErrorResponse) => {
+    }, (err: HttpErrorResponse) => {
       console.log(err.message);
     });
   }
 
   displayDetails() {
       this.expanded = !this.expanded;
-  }
-
-  toggleAccountEdit() {
-
-  }
-
-  editAccountName() {
   }
 
 }
