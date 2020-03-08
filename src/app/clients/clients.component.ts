@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-clients',
@@ -11,16 +11,21 @@ export class ClientsComponent implements OnInit {
 
   url = 'assets/data/clients.json';
   clients: any[];
+  activeClient;
 
-  constructor(private http: HttpClient, private activeRoute: ActivatedRoute) {}
+  constructor(private http: HttpClient, private activeRoute: ActivatedRoute, public router: Router) {}
+
+  activeClient() {
+
+  }
 
   ngOnInit() {
 
-
+    console.log(this.router.url);
 
     this.http.get(this.url).subscribe((data: any) => {
       this.clients = data.clients;
-    },(err: HttpErrorResponse) => {
+    }, (err: HttpErrorResponse) => {
       console.log(err.message);
     });
   }

@@ -5,9 +5,11 @@
         <a routerLink="/accounts/{{client.clientID}}" routerLinkActive="active">{{client.name}}</a></li>
     </ul>
 
-    <div class="client-view__active">
-      <p><strong>Name: </strong></p>
-      <p><strong>Address:</strong> Richmond</p>
+    <div class="client-view__active" *ngFor="let client of clients; let i = index;">
+      <div *ngIf="router.url === '/accounts/' + client.clientID">
+        <p><strong>Name: {{client.name}} </strong></p>
+        <p><strong>Address: {{client.address}}</strong></p>
+      </div>
     </div>
   </div>
 </section>
