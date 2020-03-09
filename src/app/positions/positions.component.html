@@ -12,7 +12,7 @@
       <tr *ngFor="let position of positions; let i = index">
         <td>{{position.symbol}}</td>
         <td>{{accountData.qty}}</td>
-        <td>{{position.price}}</td>
+        <td>{{position.price | currency}}</td>
         <td>{{accountData.total}}</td>
       </tr>
     </tbody>
