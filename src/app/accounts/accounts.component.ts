@@ -27,7 +27,7 @@ export class AccountsComponent implements OnInit {
   active;
   expanded: boolean = false;
 
-  public accountData = 'test';
+  public accountData = {qty: 3, total: 3};
 
   ngOnInit() {
     this.http.get(this.url).subscribe((data: any) => {
