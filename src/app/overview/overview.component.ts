@@ -9,8 +9,6 @@ export class OverviewComponent implements OnInit {
 
   constructor() { }
 
-  @Input() client:ClientData;
-
   ngOnInit() {
   }
 
