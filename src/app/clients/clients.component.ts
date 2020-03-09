@@ -11,13 +11,7 @@ export class ClientsComponent implements OnInit {
 
   url = 'assets/data/clients.json';
   clients: any[];
-  activeClient;
-
   constructor(private http: HttpClient, private activeRoute: ActivatedRoute, public router: Router) {}
-
-  activeClient() {
-
-  }
 
   ngOnInit() {
     this.http.get(this.url).subscribe((data: any) => {
