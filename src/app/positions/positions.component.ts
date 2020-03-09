@@ -14,7 +14,7 @@ export class PositionsComponent implements OnInit {
   url = 'assets/data/market.json';
   positions: any = [];
   stocks: any = [];
-  total: any;
+  portfolioTotal: any;
 
   @Input() accountData: any;
 
@@ -22,10 +22,11 @@ export class PositionsComponent implements OnInit {
   constructor(private http: HttpClient, public router: Router) {}
 
   ngOnInit() {
-    this.total = this.accountData.qty;
+    this.portfolioTotal = 500 * this.accountData.qty;
 
     this.http.get(this.url).subscribe((data: any) => {
       this.positions = data.stocks;
+
     }, (err: HttpErrorResponse) => {
       console.log(err.message);
     });
