@@ -1,18 +1,17 @@
 <section id="account-view">
   <div class="site-container">
-    <div *ngIf="">
-
-    </div>
-    <div class="account-view__account" *ngFor="let account of accounts">
-      <div *ngIf="router.url === '/accounts/' + account.clientID" >
-        <div (click)="displayDetails()" class="account-view__account--overview" [ngClass]="{expanded: expanded, hidden: !expanded}">
-          <p><strong>Account Name:</strong> {{account.name}}</p>
-          <p><strong>Last Position:</strong> {{account.lastMrkClose}}</p>
-        </div>
-        <div class="account-view__details" [hidden]="!expanded">
-          <p><strong>Account:</strong> {{account.name}}</p>
-          <p><strong>Last Market Close:</strong> {{account.lastMrkClose}}</p>
-          <p><strong>Current Market Value:</strong>{{account.current}}</p>
+    <div *ngFor="let account of accounts" class="account-view__container">
+      <div *ngIf="router.url === '/accounts/' + account.clientID">
+        <div class="account-view__account">
+          <div (click)="displayDetails()" class="account-view__account--overview" [ngClass]="{expanded: expanded, hidden: !expanded}">
+            <p><strong>Account Name:</strong> {{account.name}}</p>
+            <p><strong>Last Position:</strong> {{account.lastMrkClose}}</p>
+          </div>
+          <div class="account-view__details" [hidden]="!expanded">
+            <p><strong>Account:</strong> {{account.name}}</p>
+            <p><strong>Last Market Close:</strong> {{account.lastMrkClose}}</p>
+            <p><strong>Current Market Value:</strong>{{account.current}}</p>
+          </div>
         </div>
       </div>
     </div>

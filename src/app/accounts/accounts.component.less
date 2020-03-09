@@ -1,34 +1,38 @@
 @grey : rgba(206, 206, 206, 0.5);
 @gold : #B58D3D;
-#account-view {
-margin: 0.5em 0 2.5em;
 
-  .account-view__account {
+#account-view {
+  margin: 0.5em 0 2.5em;
+
+  .account-view__container{
     display: inline-block;
     width: calc(100% / 3);
 
-    .account-view__account--overview {
-      padding: 0.5em 1em;
-      border: 1px solid @gold;
-      margin: 0 1em 1em 0;
-      transition: .1s linear all;
-      cursor: pointer;
+    .account-view__account {
+      display: block;
 
-      &:hover {
-        background: lighten(@gold, 25%);
-      }
+      .account-view__account--overview {
+        padding: 0.5em 1em;
+        border: 1px solid @gold;
+        margin: 0 1em 1em 0;
+        transition: .1s linear all;
+        cursor: pointer;
 
-      &.expanded {
-        background: lighten(@gold, 25%);
+        &:hover {
+          background: lighten(@gold, 25%);
+        }
+
+        &.expanded {
+          background: lighten(@gold, 25%);
+        }
       }
     }
-  }
 
-  .account-view__details {
-    clear: both;
-    width: 100%;
-  }
-  .account-view__details--edit {
-    display: inline-block;
+    .account-view__details {
+      width: 100%;
+    }
+    .account-view__details--edit {
+      display: inline-block;
+    }
   }
 }
